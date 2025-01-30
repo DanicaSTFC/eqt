@@ -23,7 +23,7 @@ jobs:
     - run: pip install ${{ matrix.qtbindings }}
     - name: Set Qt to Offscreen Mode
       run: echo "QT_QPA_PLATFORM=offscreen" >> $GITHUB_ENV
-    - run: pytest
+    - run: pytest -v
   deploy:
     needs: [test]
     name: PyPI Deploy
